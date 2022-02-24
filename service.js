@@ -24,7 +24,7 @@ class Service {
     }
 
     async getTask (id) {
-        this.method = "";
+        this.method = "getTask";
         try {
             const result = await prisma.task.findUnique({
                 where: {
@@ -42,6 +42,7 @@ class Service {
     }
 
     async addTask (task) {
+        this.method = "addTask";
         try {
             const result  = await prisma.task.create({
                 data: {
@@ -62,6 +63,7 @@ class Service {
     }
 
     async updateTask (task) {
+        this.method = "updateTask";
         try {
             const result = await prisma.task.update({
                 where: {
@@ -83,6 +85,7 @@ class Service {
     }
     
     async deleteTask (task) {
+        this.method = "deleteTask";
         try {
             const result = await prisma.task.delete({
                 where: {
